@@ -1,13 +1,24 @@
 import React from "react";
 import "./css/App.css";
+import Layout from "./layout/Layout";
 
-import Button from "@mui/material/Button";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <Button variant="contained">Hello World</Button>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Layout>
+        <div>Hi this is content area</div>
+      </Layout>
+    </ThemeProvider>
   );
 }
 
