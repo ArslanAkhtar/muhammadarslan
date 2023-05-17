@@ -1196,6 +1196,12 @@ html[dir=rtl] .notifications .notify-leave {
   transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 500px) { 
+  .header {
+    padding: 15px 0px;
+  }
+}
+
 .header>.container {
   display: -webkit-box;
   display: -ms-flexbox;
