@@ -11,7 +11,7 @@ const Layout: FunctionComponent<Props> = (props: Props) => {
     <>
       <Header />
       <Menu />
-      <div id="page-content-wrapper">{props.children}</div>
+      <div className="page-content-wrapper">{props.children}</div>
     </>
   );
 };

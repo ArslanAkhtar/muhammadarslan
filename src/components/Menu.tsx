@@ -51,6 +51,7 @@ const listItemWrap = {
   minWidth: "88px",
 
   "&:hover": {
+    backgroundColor: "#3340FF",
     "& .MuiListItemText-root": {
       display: "block",
     },
