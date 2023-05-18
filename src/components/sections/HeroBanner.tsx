@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import { ReactComponent as TextSVG } from "../../assets/heroBanner/eng.svg";
 import Button from "@mui/material/Button";
 
-const containerWrapper = {
+const ContainerWrapperClass = {
   height: "100vh",
 };
 
@@ -25,7 +25,7 @@ const Title = styled.h1`
 
 const HeroBanner: FunctionComponent = () => {
   return (
-    <Container sx={containerWrapper}>
+    <Container sx={ContainerWrapperClass}>
       <ContentWrapper>
         <ImageContainer>
           <TextSVG />

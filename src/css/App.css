@@ -1,5 +1,6 @@
 .page-content-wrapper {
   margin-top: 65px;
+  overflow-x: hidden;
 }
 
 

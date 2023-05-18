@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import HeroBanner from "./components/sections/HeroBanner";
 import Cards from "./components/sections/Cards";
+import About from "./components/sections/About";
 
 const darkTheme = createTheme({
   palette: {
@@ -26,6 +27,7 @@ function App() {
       <Layout>
         <HeroBanner />
         <Cards />
+        <About />
       </Layout>
     </ThemeProvider>
   );
