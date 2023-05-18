@@ -79,7 +79,7 @@ const Cards: FunctionComponent = () => {
               </InnerContainer>
             </Box>
           </Slide>
-          <Fade in={active} timeout={500}>
+          <Fade in={active} timeout={1000}>
             <Box
               sx={{
                 width: 300,
