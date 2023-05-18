@@ -53,12 +53,12 @@ const Cards: FunctionComponent = () => {
                 borderRadius: "10px",
                 bgcolor: "#222",
                 boxShadow: "11px 10px 38px hsla(0, 0%, 0%, 38%)",
-                transition: "all 0.5s ease-in-out",
+                transition: "all 1s ease-in",
                 "&:hover": {
                   backgroundColor: "primary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                  position: "relative",
-                  bottom: "20px",
+                  // opacity: [0.9, 0.8, 0.7],
+                  // position: "relative",
+                  // bottom: "20px",
                 },
               }}
             >
@@ -87,12 +87,12 @@ const Cards: FunctionComponent = () => {
                 borderRadius: "10px",
                 bgcolor: "#222",
                 boxShadow: "11px 10px 38px hsla(0, 0%, 0%, 38%)",
-                transition: "all 0.5s ease-in-out",
+                transition: "all 1s ease-in",
                 "&:hover": {
                   backgroundColor: "primary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                  position: "relative",
-                  bottom: "20px",
+                  // opacity: [0.9, 0.8, 0.7],
+                  // position: "relative",
+                  // bottom: "20px",
                 },
               }}
             >
@@ -126,12 +126,12 @@ const Cards: FunctionComponent = () => {
                 borderRadius: "10px",
                 bgcolor: "#222",
                 boxShadow: "11px 10px 38px hsla(0, 0%, 0%, 38%)",
-                transition: "all 0.5s ease-in-out",
+                transition: "all 1s ease-in",
                 "&:hover": {
                   backgroundColor: "primary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                  position: "relative",
-                  bottom: "20px",
+                  // opacity: [0.9, 0.8, 0.7],
+                  // position: "relative",
+                  // bottom: "20px",
                 },
               }}
             >
