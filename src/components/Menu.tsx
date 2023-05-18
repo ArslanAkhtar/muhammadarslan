@@ -20,7 +20,7 @@ const listStyle = {
   paddingTop: 0,
   paddingBottom: 0,
 
-  "& :nth-child(1)": {
+  "& :nth-of-type(1)": {
     "&:hover": {
       borderTopRightRadius: "0.5rem",
     },

@@ -5,6 +5,7 @@ import Layout from "./layout/Layout";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import HeroBanner from "./components/sections/HeroBanner";
+import Cards from "./components/sections/Cards";
 
 const darkTheme = createTheme({
   palette: {
@@ -13,7 +14,7 @@ const darkTheme = createTheme({
       main: "#3340FF", // very red
     },
     secondary: {
-      main: "#00fff0", // very cyan
+      main: "#ea7719", // very cyan
     },
   },
 });
@@ -24,6 +25,7 @@ function App() {
       <CssBaseline />
       <Layout>
         <HeroBanner />
+        <Cards />
       </Layout>
     </ThemeProvider>
   );

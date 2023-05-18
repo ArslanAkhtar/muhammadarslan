@@ -30,10 +30,9 @@ const HeroBanner: FunctionComponent = () => {
         <ImageContainer>
           <TextSVG />
         </ImageContainer>
-
         <Title>
-          Hi, I'm Muhammad Arslan I am a Senior Front-end Consultant, Developer
-          and Expert for Web.
+          Hi, I'm Muhammad Arslan I am a Senior Front-end Consultant, Developer,
+          and a Web Expert.
         </Title>
         <Button variant="contained" size="large">
           Get In Touch
