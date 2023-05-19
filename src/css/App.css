@@ -87,3 +87,8 @@
     stroke-dashoffset: 1000;
   }
 }
+
+.Mui-selected {
+  color: #fff !important;
+  background-color: #3340FF !important;
+}

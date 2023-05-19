@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import HeroBanner from "./components/sections/HeroBanner";
 import Cards from "./components/sections/Cards";
 import About from "./components/sections/About";
+import Skills from "./components/sections/Skills";
 
 const darkTheme = createTheme({
   palette: {
@@ -28,6 +29,7 @@ function App() {
         <HeroBanner />
         <Cards />
         <About />
+        <Skills />
       </Layout>
     </ThemeProvider>
   );
