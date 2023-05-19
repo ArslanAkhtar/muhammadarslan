@@ -21,6 +21,13 @@ const ImageContainer = styled.div`
 const Title = styled.h1`
   font-size: 3rem;
   line-height: 1.2;
+
+  @media (max-width: 600px) {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 6rem;
+    text-align: center;
+  }
 `;
 
 const HeroBanner: FunctionComponent = () => {

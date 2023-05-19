@@ -9,9 +9,32 @@ const ContainerWrapperClass = {
   padding: "5% 0",
 };
 
+const HeadingWrapperClass = {
+  fontWeight: "bold",
+  color: "secondary.main",
+  "@media  (max-width: 600px)": {
+    textAlign: "center",
+    marginBottom: "54px",
+  },
+};
+
 const RightSide = styled.div`
   flex: 1;
   padding: 10px;
+
+  @media (min-width: 450px) and (max-width: 600px) {
+    position: relative;
+    top: 583px;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 449px) {
+    position: relative;
+    top: 590px;
+    left: 90%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const LeftSide = styled.div`
@@ -19,6 +42,11 @@ const LeftSide = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 600px) {
+    position: relative;
+    top: 635px;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const About: FunctionComponent = () => {
@@ -32,17 +60,17 @@ const About: FunctionComponent = () => {
     >
       <Container sx={ContainerWrapperClass} ref={containerRef}>
         <RightSide>
-          <img alt="profilePicture" src={ProfilePic} />
+          <img
+            className="profile-picture"
+            alt="profilePicture"
+            src={ProfilePic}
+          />
         </RightSide>
         <LeftSide>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ fontWeight: "bold", color: "secondary.main" }}
-          >
+          <Typography variant="h4" gutterBottom sx={HeadingWrapperClass}>
             Elevator Pitch
           </Typography>
-          <p>
+          <p className="about-me">
             Hi! I'm Muhammad Arslan, and I am an experienced full-stack
             developer with over 10+ years of expertise in the field. I am
             proficient in front-end technologies such as React, Svelte, Vue.js,

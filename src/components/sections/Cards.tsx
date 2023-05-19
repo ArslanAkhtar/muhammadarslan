@@ -13,6 +13,14 @@ const containerWrapper = {
   justifyContent: "center",
 };
 
+const stackWrapper = {
+  "@media (max-width: 600px)" :
+   {
+  //   display: "flex",
+     flexDirection: "column",
+   },
+};
+
 const InnerContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -39,7 +47,7 @@ const Cards: FunctionComponent = () => {
       }}
     >
       <Container sx={containerWrapper}>
-        <Stack spacing={2} direction="row" ref={containerRef}>
+        <Stack spacing={2} direction="row" sx={stackWrapper} ref={containerRef}>
           <Slide
             in={active}
             timeout={200}

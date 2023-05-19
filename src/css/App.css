@@ -3,6 +3,26 @@
   overflow-x: hidden;
 }
 
+.profile-picture {
+  height: 500px;
+  width: auto;
+  margin-top: 56px;
+  @media (max-width: 600px) {
+    height: 100px;
+    width: auto;
+    /* display: none; */
+  }
+}
+
+.about-me
+{
+  @media (max-width: 600px) {
+    position: relative;
+    margin-bottom:50px;
+    text-align: center;
+  }
+
+}
 
 #cog {
   animation: rotate 6s infinite;

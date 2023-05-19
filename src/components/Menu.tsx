@@ -32,6 +32,25 @@ const listStyle = {
       borderBottomRightRadius: "0.5rem",
     },
   },
+  "@media (min-width: 450px) and (max-width: 600px)": {
+    display: "flex",
+    position: "fixed",
+    bottom: "-37px",
+    left: "121px",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 9999,
+  },
+  "@media (max-width: 449px)": {
+    display: "flex",
+    position: "fixed",
+    bottom: "-37px",
+    left: "3px",
+    alignItems: "center",
+    right: "3px",
+    justifyContent: "center",
+    zIndex: 9999,
+  },
 };
 
 const textStyle = {
@@ -47,6 +66,7 @@ const listItemWrap = {
   flexWrap: "wrap",
   alignItems: "center",
   justifyContent: "space-around",
+  
 
   minHeight: "73px",
   minWidth: "120px",
