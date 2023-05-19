@@ -35,7 +35,11 @@ const About: FunctionComponent = () => {
           <img alt="profilePicture" src={ProfilePic} />
         </RightSide>
         <LeftSide>
-          <Typography variant="h4" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ fontWeight: "bold", color: "secondary.main" }}
+          >
             Elevator Pitch
           </Typography>
           <p>
