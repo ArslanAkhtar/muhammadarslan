@@ -1,13 +1,21 @@
 import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
-import { Container, Stack, Typography, Box } from "@mui/material";
+import {
+  Container,
+  Stack,
+  Typography,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
 import VizSensor from "react-visibility-sensor";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+
+import SkillsBox from "./subSections/SkillsBox";
+import ToolsBox from "./subSections/ToolsBox";
 
 const ContainerWrapperClass = {
   display: "flex",
   padding: "5% 0",
+  minHeight: "65vh",
 };
 
 const RightSide = styled.div`
@@ -69,7 +77,7 @@ const Skills: FunctionComponent = () => {
           </Stack>
         </RightSide>
         <LeftSide>
-          <Box></Box>
+          {alignment === "skills" ? <SkillsBox /> : <ToolsBox />}
         </LeftSide>
       </Container>
     </VizSensor>
