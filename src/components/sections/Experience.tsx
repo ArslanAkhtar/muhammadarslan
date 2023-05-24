@@ -20,6 +20,8 @@ const LeftSide = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
+  max-height: 50vh;
+  overflow: auto;
 `;
 
 const Experience: FunctionComponent = () => {
