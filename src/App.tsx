@@ -1,16 +1,16 @@
 import React, { useEffect, FunctionComponent, useRef } from "react";
-import "./css/App.css";
-import Layout from "./layout/Layout";
-
+import { useLocation } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+
+import Layout from "./layout/Layout";
 import HeroBanner from "./components/sections/HeroBanner";
 import Cards from "./components/sections/Cards";
 import About from "./components/sections/About";
 import Skills from "./components/sections/Skills";
 import Experience from "./components/sections/Experience";
 import Contact from "./components/sections/Contact";
-import { useLocation } from "react-router-dom";
+import "./css/App.css";
 
 const darkTheme = createTheme({
   palette: {
@@ -35,28 +35,18 @@ const App: FunctionComponent = () => {
 
   useEffect(() => {
     const { hash } = location;
-    let targetRef = null;
+    const targetRefs: { [key: string]: React.RefObject<HTMLDivElement> } = {
+      "#home": homeRef,
+      "#about": aboutRef,
+      "#skills": skillsRef,
+      "#experience": expRef,
+      "#contact": contactRef,
+    };
 
-    switch (hash) {
-      case "#home":
-        targetRef = homeRef;
-        break;
-      case "#about":
-        targetRef = aboutRef;
-        break;
-      case "#skills":
-        targetRef = skillsRef;
-        break;
-      case "#experience":
-        targetRef = expRef;
-        break;
-      case "#contact":
-        targetRef = contactRef;
-        break;
-    }
+    const targetRef = targetRefs[hash];
 
-    if (targetRef && targetRef.current) {
-      targetRef?.current?.scrollIntoView({ behavior: "smooth" });
+    if (targetRef?.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
 
