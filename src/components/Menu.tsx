@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
+import { List, ListItem, ListItemText, Divider } from "@mui/material";
+
 import styled from "styled-components";
 
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
@@ -10,6 +8,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
+
+import { Link } from "react-router-dom";
 
 const listStyle = {
   width: "100%",
@@ -64,33 +64,48 @@ const MenuWrapper = styled.div`
   top: 50%;
 `;
 
+const LinkWrapper = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+`;
+
 const Menu: FunctionComponent = () => {
   return (
     <MenuWrapper>
       <List sx={listStyle} component="nav" aria-label="LeftMenu">
-        <ListItem button sx={listItemWrap}>
-          <ListItemText primary="Home" sx={textStyle} />
-          <CottageOutlinedIcon />
-        </ListItem>
+        <LinkWrapper to="#home">
+          <ListItem sx={listItemWrap}>
+            <ListItemText primary="Home" sx={textStyle} />
+            <CottageOutlinedIcon />
+          </ListItem>
+        </LinkWrapper>
         <Divider />
-        <ListItem button divider sx={listItemWrap}>
-          <ListItemText primary="About" sx={textStyle} />
-          <AccountCircleIcon />
-        </ListItem>
-        <ListItem button sx={listItemWrap}>
-          <ListItemText primary="Skills" sx={textStyle} />
-          <PsychologyIcon />
-        </ListItem>
+        <LinkWrapper to="#about">
+          <ListItem divider sx={listItemWrap}>
+            <ListItemText primary="About" sx={textStyle} />
+            <AccountCircleIcon />
+          </ListItem>
+        </LinkWrapper>
+        <LinkWrapper to="#skills">
+          <ListItem sx={listItemWrap}>
+            <ListItemText primary="Skills" sx={textStyle} />
+            <PsychologyIcon />
+          </ListItem>
+        </LinkWrapper>
         <Divider light />
-        <ListItem button divider sx={listItemWrap}>
-          <ListItemText primary="Experience" sx={textStyle} />
-          <ManageAccountsIcon />
-        </ListItem>
+        <LinkWrapper to="#experience">
+          <ListItem divider sx={listItemWrap}>
+            <ListItemText primary="Experience" sx={textStyle} />
+            <ManageAccountsIcon />
+          </ListItem>
+        </LinkWrapper>
         <Divider light />
-        <ListItem button sx={listItemWrap}>
-          <ListItemText primary="Contact" sx={textStyle} />
-          <ContactMailIcon />
-        </ListItem>
+        <LinkWrapper to="#contact">
+          <ListItem sx={listItemWrap}>
+            <ListItemText primary="Contact" sx={textStyle} />
+            <ContactMailIcon />
+          </ListItem>
+        </LinkWrapper>
       </List>
     </MenuWrapper>
   );
