@@ -24,7 +24,7 @@ const RightSide = styled.div`
 `;
 
 const LeftSide = styled.div`
-  flex: 1 1 0%;
+  flex: 1.2 1 0%;
   padding: 10px;
   display: flex;
   flex-direction: column;

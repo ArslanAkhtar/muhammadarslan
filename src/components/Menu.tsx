@@ -9,6 +9,7 @@ import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 const listStyle = {
   width: "100%",
@@ -48,7 +49,7 @@ const listItemWrap = {
   justifyContent: "space-around",
 
   minHeight: "73px",
-  minWidth: "88px",
+  minWidth: "120px",
 
   "&:hover": {
     backgroundColor: "#3340FF",
@@ -79,6 +80,11 @@ const Menu: FunctionComponent = () => {
         <ListItem button sx={listItemWrap}>
           <ListItemText primary="Skills" sx={textStyle} />
           <PsychologyIcon />
+        </ListItem>
+        <Divider light />
+        <ListItem button divider sx={listItemWrap}>
+          <ListItemText primary="Experience" sx={textStyle} />
+          <ManageAccountsIcon />
         </ListItem>
         <Divider light />
         <ListItem button sx={listItemWrap}>

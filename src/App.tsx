@@ -9,6 +9,7 @@ import Cards from "./components/sections/Cards";
 import About from "./components/sections/About";
 import Skills from "./components/sections/Skills";
 import Experience from "./components/sections/Experience";
+import Contact from "./components/sections/Contact";
 
 const darkTheme = createTheme({
   palette: {
@@ -32,6 +33,7 @@ function App() {
         <About />
         <Skills />
         <Experience />
+        <Contact />
       </Layout>
     </ThemeProvider>
   );
