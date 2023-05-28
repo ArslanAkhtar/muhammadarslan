@@ -44,9 +44,12 @@ const App: FunctionComponent = () => {
     };
 
     const targetRef = targetRefs[hash];
-
     if (targetRef?.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth" });
+      targetRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "end",
+      });
     }
   }, [location]);
 
