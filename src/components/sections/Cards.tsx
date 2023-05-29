@@ -14,11 +14,10 @@ const containerWrapper = {
 };
 
 const stackWrapper = {
-  "@media (max-width: 600px)" :
-   {
-  //   display: "flex",
-     flexDirection: "column",
-   },
+  "@media (max-width: 1023px)": {
+    flexDirection: "column",
+    alignItems: "center",
+  },
 };
 
 const InnerContainer = styled.div`
@@ -64,9 +63,10 @@ const Cards: FunctionComponent = () => {
                 transition: "all 1s ease-in",
                 "&:hover": {
                   backgroundColor: "primary.main",
-                  // opacity: [0.9, 0.8, 0.7],
-                  // position: "relative",
-                  // bottom: "20px",
+                },
+                "@media (min-width: 200px) and (max-width: 1023px)": {
+                  marginLeft: "0px !important",
+                  marginBottom: "20px !important",
                 },
               }}
             >
@@ -98,9 +98,10 @@ const Cards: FunctionComponent = () => {
                 transition: "all 1s ease-in",
                 "&:hover": {
                   backgroundColor: "primary.main",
-                  // opacity: [0.9, 0.8, 0.7],
-                  // position: "relative",
-                  // bottom: "20px",
+                },
+                "@media (min-width: 200px) and (max-width: 1023px)": {
+                  marginLeft: "0px !important",
+                  marginBottom: "20px !important",
                 },
               }}
             >
@@ -137,9 +138,10 @@ const Cards: FunctionComponent = () => {
                 transition: "all 1s ease-in",
                 "&:hover": {
                   backgroundColor: "primary.main",
-                  // opacity: [0.9, 0.8, 0.7],
-                  // position: "relative",
-                  // bottom: "20px",
+                },
+                "@media (min-width: 200px) and (max-width: 1023px)": {
+                  marginLeft: "0px !important",
+                  marginBottom: "20px !important",
                 },
               }}
             >

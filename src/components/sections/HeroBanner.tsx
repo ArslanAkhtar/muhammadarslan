@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Container from "@mui/material/Container";
 import { ReactComponent as TextSVG } from "../../assets/heroBanner/eng.svg";
 import Button from "@mui/material/Button";
@@ -7,6 +7,12 @@ import { useLocation } from "react-router-dom";
 
 const ContainerWrapperClass = {
   height: "100vh",
+  "@media (min-width: 200px) and (max-width: 600px)": {
+    height: "90vh",
+  },
+  "@media (min-width: 601px) and (max-width: 1024px)": {
+    height: "108vh",
+  },
 };
 
 const ContentWrapper = styled.div`
@@ -17,6 +23,12 @@ const ContentWrapper = styled.div`
 `;
 const ImageContainer = styled.div`
   width: 55%;
+  ${css`
+    /* styles for mobile devices */
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  `}
 `;
 
 const Title = styled.h1`

@@ -61,16 +61,6 @@ const listStyle = {
       },
     },
   },
-  // "@media (max-width: 449px)": {
-  //   display: "flex",
-  //   position: "fixed",
-  //   bottom: "-37px",
-  //   left: "3px",
-  //   alignItems: "center",
-  //   right: "3px",
-  //   justifyContent: "center",
-  //   zIndex: 9999,
-  // },
 };
 
 const textStyle = {
@@ -93,7 +83,7 @@ const listItemWrap = {
   minHeight: "73px",
   minWidth: "120px",
 
-  "@media (min-width: 768px) and (max-width: 1024px)": {
+  "@media (min-width: 768px) and (max-width: 1023px)": {
     minHeight: "auto",
     minWidth: "auto",
     borderRight: "1px solid rgba(255, 255, 255, 0.1)",
@@ -144,7 +134,7 @@ const MenuWrapper = styled.div`
 
   ${css`
     /* styles for tablets */
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       /* your tablet styles here */
     }
   `}
