@@ -5,7 +5,6 @@ import VizSensor from "react-visibility-sensor";
 import ProfilePic from "../../assets/about/profilePic.jpg";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-//import pdfFile from "../../download/MuhammadArslan.pdf";
 import { saveAs } from "file-saver";
 
 const ContainerWrapperClass = {
