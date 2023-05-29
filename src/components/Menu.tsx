@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { List, ListItem, ListItemText, Divider } from "@mui/material";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -32,31 +32,54 @@ const listStyle = {
       borderBottomRightRadius: "0.5rem",
     },
   },
-  "@media (min-width: 450px) and (max-width: 600px)": {
+  "@media (min-width: 200px) and (max-width: 600px)": {
+    borderTopRightRadius: "0",
+    borderBottomRightRadius: "0",
     display: "flex",
-    position: "fixed",
-    bottom: "-37px",
-    left: "121px",
+    width: "100%",
     alignItems: "center",
-    justifyContent: "center",
-    zIndex: 9999,
+    maxWidth: "inherit",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "space-between",
+
+    "& :nth-of-type(1)": {
+      "&:hover": {
+        borderTopRightRadius: "0",
+      },
+    },
+    "& :last-child": {
+      "& .MuiListItem-root": {
+        borderRight: "0px",
+      },
+    },
+
+    "& .MuiListItem-root:last-child": {
+      borderBottom: "0px",
+      "&:hover": {
+        borderBottomRightRadius: "0",
+      },
+    },
   },
-  "@media (max-width: 449px)": {
-    display: "flex",
-    position: "fixed",
-    bottom: "-37px",
-    left: "3px",
-    alignItems: "center",
-    right: "3px",
-    justifyContent: "center",
-    zIndex: 9999,
-  },
+  // "@media (max-width: 449px)": {
+  //   display: "flex",
+  //   position: "fixed",
+  //   bottom: "-37px",
+  //   left: "3px",
+  //   alignItems: "center",
+  //   right: "3px",
+  //   justifyContent: "center",
+  //   zIndex: 9999,
+  // },
 };
 
 const textStyle = {
   display: "none",
   "&:hover": {
     display: "block",
+    "@media (min-width: 200px) and (max-width: 768px)": {
+      display: "none",
+    },
   },
 };
 
@@ -66,15 +89,25 @@ const listItemWrap = {
   flexWrap: "wrap",
   alignItems: "center",
   justifyContent: "space-around",
-  
 
   minHeight: "73px",
   minWidth: "120px",
+
+  "@media (min-width: 200px) and (max-width: 768px)": {
+    minHeight: "auto",
+    minWidth: "auto",
+    borderRight: "1px solid rgba(255, 255, 255, 0.1)",
+    borderBottom: "0px",
+    padding: "16px 26px",
+  },
 
   "&:hover": {
     backgroundColor: "#3340FF",
     "& .MuiListItemText-root": {
       display: "block",
+      "@media (min-width: 200px) and (max-width: 768px)": {
+        display: "none",
+      },
     },
   },
 };
@@ -82,6 +115,23 @@ const listItemWrap = {
 const MenuWrapper = styled.div`
   position: fixed;
   top: 50%;
+  z-index: 9999;
+
+  ${css`
+    /* styles for mobile devices */
+    @media (max-width: 768px) {
+      top: 97%;
+      bottom: 0;
+      width: 100%;
+    }
+  `}
+
+  ${css`
+    /* styles for tablets */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      /* your tablet styles here */
+    }
+  `}
 `;
 
 const LinkWrapper = styled(Link)`
@@ -99,9 +149,9 @@ const Menu: FunctionComponent = () => {
             <CottageOutlinedIcon />
           </ListItem>
         </LinkWrapper>
-        <Divider />
+        {/* <Divider /> */}
         <LinkWrapper to="#about">
-          <ListItem divider sx={listItemWrap}>
+          <ListItem sx={listItemWrap}>
             <ListItemText primary="About" sx={textStyle} />
             <AccountCircleIcon />
           </ListItem>
@@ -112,14 +162,14 @@ const Menu: FunctionComponent = () => {
             <PsychologyIcon />
           </ListItem>
         </LinkWrapper>
-        <Divider light />
+        {/* <Divider light /> */}
         <LinkWrapper to="#experience">
-          <ListItem divider sx={listItemWrap}>
+          <ListItem sx={listItemWrap}>
             <ListItemText primary="Experience" sx={textStyle} />
             <ManageAccountsIcon />
           </ListItem>
         </LinkWrapper>
-        <Divider light />
+        {/* <Divider light /> */}
         <LinkWrapper to="#contact">
           <ListItem sx={listItemWrap}>
             <ListItemText primary="Contact" sx={textStyle} />
