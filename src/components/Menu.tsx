@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { List, ListItem, ListItemText, Divider } from "@mui/material";
+import { List, ListItem, ListItemText } from "@mui/material";
 
 import styled, { css } from "styled-components";
 
