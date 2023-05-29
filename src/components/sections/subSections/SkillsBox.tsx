@@ -8,7 +8,15 @@ const Logo = styled.img`
 
 const SkillsBox: FunctionComponent = () => {
   return (
-    <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        "@media (min-width: 200px) and (max-width: 1023px)": {
+          justifyContent: "center",
+        },
+      }}
+    >
       <Tooltip title="HTML5" arrow>
         <Box
           sx={{

@@ -1,12 +1,22 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Container, Stack, Button, Typography } from "@mui/material";
 import VizSensor from "react-visibility-sensor";
 import ProfilePic from "../../assets/about/profilePic.jpg";
+import { useLocation } from "react-router-dom";
 
 const ContainerWrapperClass = {
   display: "flex",
   padding: "5% 0",
+  "@media (min-width: 200px) and (max-width: 1023px)": {
+    flexDirection: "column",
+    alignItems: "center",
+  },
+};
+
+const HeadingWrapperClass = {
+  fontWeight: "bold",
+  color: "secondary.main",
 };
 
 const RightSide = styled.div`
@@ -16,14 +26,48 @@ const RightSide = styled.div`
 
 const LeftSide = styled.div`
   flex: 1 1 0%;
-  padding: 10px;
+  padding: 5%;
   display: flex;
   flex-direction: column;
 `;
 
 const About: FunctionComponent = () => {
   let [active, setActive] = useState(false);
-  const containerRef = React.useRef(null);
+  const containerRef = useRef(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Update the URL when the section becomes visible
+          if (location.pathname !== "/#about") {
+            window.history.pushState(null, "", "/#about");
+          }
+        }
+      });
+    }, options);
+
+    const currentSectionRef = containerRef.current; // Store current ref value in a variable
+
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
+    }
+
+    return () => {
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
+      }
+    };
+  }, [location]);
+
   return (
     <VizSensor
       onChange={(isVisible: boolean) => {
@@ -32,17 +76,17 @@ const About: FunctionComponent = () => {
     >
       <Container sx={ContainerWrapperClass} ref={containerRef}>
         <RightSide>
-          <img alt="profilePicture" src={ProfilePic} />
+          <img
+            className="profile-picture"
+            alt="profilePicture"
+            src={ProfilePic}
+          />
         </RightSide>
         <LeftSide>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ fontWeight: "bold", color: "secondary.main" }}
-          >
+          <Typography variant="h4" gutterBottom sx={HeadingWrapperClass}>
             Elevator Pitch
           </Typography>
-          <p>
+          <p className="about-me">
             Hi! I'm Muhammad Arslan, and I am an experienced full-stack
             developer with over 10+ years of expertise in the field. I am
             proficient in front-end technologies such as React, Svelte, Vue.js,

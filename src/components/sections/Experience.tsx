@@ -1,8 +1,9 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Container, Typography } from "@mui/material";
 import VizSensor from "react-visibility-sensor";
 import ExperienceTimeline from "./subSections/ExperienceTimeline";
+import { useLocation } from "react-router-dom";
 
 const ContainerWrapperClass = {
   display: "flex",
@@ -26,7 +27,41 @@ const LeftSide = styled.div`
 
 const Experience: FunctionComponent = () => {
   let [active, setActive] = useState(false);
-  const containerRef = React.useRef(null);
+  const containerRef = useRef(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Update the URL when the section becomes visible
+          if (location.pathname !== "/#experience") {
+            window.history.pushState(null, "", "/#experience");
+          }
+        }
+      });
+    }, options);
+
+    const currentSectionRef = containerRef.current; // Store current ref value in a variable
+
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
+    }
+
+    return () => {
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
+      }
+    };
+  }, [location]);
+
   return (
     <VizSensor
       onChange={(isVisible: boolean) => {
