@@ -3,6 +3,22 @@
   overflow-x: hidden;
 }
 
+.profile-picture {
+  width: 90%;
+  margin-top: 56px;
+  @media (max-width: 600px) {
+    width: 100%;
+    margin-top: 0px;
+  }
+}
+
+.about-me
+{
+  @media (max-width: 600px) {
+    margin-bottom:50px;
+  }
+
+}
 
 #cog {
   animation: rotate 6s infinite;
@@ -91,4 +107,10 @@
 .Mui-selected {
   color: #fff !important;
   background-color: #3340FF !important;
+}
+
+.MuiContainer-root {
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
 }
