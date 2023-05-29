@@ -5,6 +5,8 @@ import VizSensor from "react-visibility-sensor";
 import ProfilePic from "../../assets/about/profilePic.jpg";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+//import pdfFile from "../../download/MuhammadArslan.pdf";
+import { saveAs } from "file-saver";
 
 const ContainerWrapperClass = {
   display: "flex",
@@ -69,6 +71,10 @@ const About: FunctionComponent = () => {
     };
   }, [location]);
 
+  const downloadPDF = () => {
+    saveAs(require("../../download/MuhammadArslan.pdf"), "MuhammadArslan.pdf");
+  };
+
   return (
     <VizSensor
       onChange={(isVisible: boolean) => {
@@ -110,7 +116,9 @@ const About: FunctionComponent = () => {
             <Button variant="contained" component={Link} to="/#contact">
               Hire Me
             </Button>
-            <Button variant="outlined">Download CV</Button>
+            <Button variant="outlined" onClick={downloadPDF}>
+              Download CV
+            </Button>
           </Stack>
         </LeftSide>
       </Container>
