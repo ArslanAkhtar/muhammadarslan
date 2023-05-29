@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import { ReactComponent as TextSVG } from "../../assets/heroBanner/eng.svg";
 import Button from "@mui/material/Button";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ContainerWrapperClass = {
   height: "100vh",
@@ -88,7 +89,12 @@ const HeroBanner: FunctionComponent = () => {
           Hi, I'm Muhammad Arslan I am a Senior Front-end Consultant, Developer,
           and a Web Expert.
         </Title>
-        <Button variant="contained" size="large">
+        <Button
+          variant="contained"
+          size="large"
+          component={Link}
+          to="/#contact"
+        >
           Get In Touch
         </Button>
       </ContentWrapper>

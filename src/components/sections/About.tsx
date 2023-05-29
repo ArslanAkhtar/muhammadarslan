@@ -4,6 +4,7 @@ import { Container, Stack, Button, Typography } from "@mui/material";
 import VizSensor from "react-visibility-sensor";
 import ProfilePic from "../../assets/about/profilePic.jpg";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ContainerWrapperClass = {
   display: "flex",
@@ -106,7 +107,9 @@ const About: FunctionComponent = () => {
           </p>
 
           <Stack spacing={2} direction="row" ref={containerRef}>
-            <Button variant="contained">Hire Me</Button>
+            <Button variant="contained" component={Link} to="/#contact">
+              Hire Me
+            </Button>
             <Button variant="outlined">Download CV</Button>
           </Stack>
         </LeftSide>
