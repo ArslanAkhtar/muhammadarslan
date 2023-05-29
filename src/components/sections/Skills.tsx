@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   Container,
   Stack,
@@ -30,6 +30,12 @@ const LeftSide = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
+  ${css`
+    /* styles for mobile devices */
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  `}
 `;
 
 const Skills: FunctionComponent = () => {
@@ -98,7 +104,16 @@ const Skills: FunctionComponent = () => {
             technologies.
           </p>
 
-          <Stack spacing={2} direction="row" ref={containerRef}>
+          <Stack
+            spacing={2}
+            direction="row"
+            ref={containerRef}
+            sx={{
+              "@media (min-width: 200px) and (max-width: 1023px)": {
+                justifyContent: "center",
+              },
+            }}
+          >
             <ToggleButtonGroup
               color="primary"
               value={alignment}
