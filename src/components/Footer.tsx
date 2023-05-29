@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Box, Link, Typography } from "@mui/material";
 const FooterWrapper = styled.div`
   box-shadow: rgba(34, 34, 34, 0.1) 0px 0.125rem 0.3125rem;
@@ -10,6 +10,15 @@ const FooterWrapper = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+
+  ${css`
+    /* styles for mobile devices */
+    @media (max-width: 1023px) {
+      margin-bottom: 45px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  `}
 `;
 
 const Footer: FunctionComponent = () => {

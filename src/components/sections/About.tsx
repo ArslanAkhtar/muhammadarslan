@@ -8,46 +8,27 @@ import { useLocation } from "react-router-dom";
 const ContainerWrapperClass = {
   display: "flex",
   padding: "5% 0",
+  "@media (min-width: 200px) and (max-width: 1023px)": {
+    flexDirection: "column",
+    alignItems: "center",
+  },
 };
 
 const HeadingWrapperClass = {
   fontWeight: "bold",
   color: "secondary.main",
-  "@media  (max-width: 600px)": {
-    textAlign: "center",
-    marginBottom: "54px",
-  },
 };
 
 const RightSide = styled.div`
   flex: 1;
   padding: 10px;
-
-  @media (min-width: 450px) and (max-width: 600px) {
-    position: relative;
-    top: 583px;
-    left: 100%;
-    transform: translate(-50%, -50%);
-  }
-
-  @media (max-width: 449px) {
-    position: relative;
-    top: 590px;
-    left: 90%;
-    transform: translate(-50%, -50%);
-  }
 `;
 
 const LeftSide = styled.div`
   flex: 1 1 0%;
-  padding: 10px;
+  padding: 5%;
   display: flex;
   flex-direction: column;
-  @media (max-width: 600px) {
-    position: relative;
-    top: 635px;
-    transform: translate(-50%, -50%);
-  }
 `;
 
 const About: FunctionComponent = () => {
